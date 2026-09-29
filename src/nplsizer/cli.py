@@ -6,12 +6,12 @@ Driver script for calculating nanoplatelet size from an image.
 '''
 
 import napari
-from _io_ops import io_op_widgets
-from _histogram import hist_widgets
-from _filters import filter_widgets, denoiser_widgets
-from _thresholders import threshold_widgets
-from _morph_ops import morph_op_widgets
-from _segmentation import segmentation_widgets
+from .io_ops import io_op_widgets
+from .histogram import hist_widgets
+from .filters import filter_widgets, denoiser_widgets
+from .thresholders import threshold_widgets
+from .morph_ops import morph_op_widgets
+from .segmentation import segmentation_widgets
 
 
 viewer = napari.Viewer(order=(0,1))
@@ -75,5 +75,8 @@ for each in segmentation_widgets:
 
 
 # start the event loop and show the viewer
-if __name__ == '__main__' :
+def run():
+    napari.run()
+
+if __name__ == '__main__':
     napari.run()

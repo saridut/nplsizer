@@ -19,8 +19,6 @@ import napari
 import dm3_lib as dm3
 
 
-
-
 @magicgui(call_button='Open',
           fn = {'label': 'Image file', 'mode': 'r'},
           write_dm3_metadata = {'label': 'Write metadata for DM3 files'},
@@ -84,7 +82,7 @@ def read_image(fn: pathlib.Path,
         #Pixel unit: Defaults to 'px' for non-dm3 files
         #PXSIZE = 1.0; PXUNIT = 'px'
     elif ft == 'dm3':
-        img_dm3 = dm3.DM3(fn)
+        img_dm3 = dm3.DM3(str(fn))
         img = ski.exposure.rescale_intensity(img_dm3.imagedata, out_range=np.float64)
         #Pixel size for dm3 files
         PXSIZE = img_dm3.pxsize[0]

@@ -10,7 +10,7 @@ import skimage as ski
 from magicgui import magicgui
 from napari.layers import Image
 from napari.types import LayerDataTuple
-from _kuwahara import kuwahara
+from .kuwahara import kuwahara
 
 @magicgui(
     call_button='Run', 
@@ -435,9 +435,9 @@ def filter_unsharp_mask(image: Image,
        ) -> LayerDataTuple :
 
     """
-    Sharpens an image using the unsharp_mask filter.  Wraps ``unsharp_mask()`` from scikit-image.
-    See https://scikit-image.org/docs/stable/api/skimage.filters.html#skimage.filters.unsharp_mask
-
+    Sharpens an image using the unsharp_mask filter.  Wraps `unsharp_mask() 
+    <https://scikit-image.org/docs/stable/api/skimage.filters.html#skimage.filters.unsharp_mask>`__ 
+    from scikit-image.
     Parameters
     ----------
     image : napari.layers.Image
