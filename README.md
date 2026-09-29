@@ -14,7 +14,7 @@ along with the following Python packages.
 - [scipy (1.18)](https://scipy.org/)
 - [scikit-image (0.26)](https://scikit-image.org/)
 - [pyqt6 (6.11)](https://pypi.org/project/PyQt5/)
-- [magicgui (10.2)](https://pyapp-kit.github.io/magicgui/)
+- [magicgui (0.10)](https://pyapp-kit.github.io/magicgui/)
 - [napari (0.7)](https://napari.org/stable/)
 - [opencv (5.0)](https://opencv.org/)
 - [pyDM3reader (v2)](https://github.com/piraynal/pyDM3reader)
