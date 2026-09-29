@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>magicgui.widgets._function_gui &#8212; nplsizer 0.1.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ceb86668" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../../_static/documentation_options.js?v=a58bc63e"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/magicgui/widgets/_function_gui';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.1" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">nplsizer 0.1.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules.html">
+    nplsizer
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules.html">
+    nplsizer
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+        <li class="toctree-l1">
+          <a class="reference internal" href="../../../py-modindex.html">Python Module Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">magicgui.widgets._function_gui</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for magicgui.widgets._function_gui</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The FunctionGui class is a Container subclass designed to represent a function.</span>
+
+<span class="sd">The core `magicgui` decorator returns an instance of a FunctionGui widget.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">contextmanager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">types</span><span class="w"> </span><span class="kn">import</span> <span class="n">FunctionType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">TYPE_CHECKING</span><span class="p">,</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">Generic</span><span class="p">,</span>
+    <span class="n">NoReturn</span><span class="p">,</span>
+    <span class="n">TypeVar</span><span class="p">,</span>
+    <span class="n">cast</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">psygnal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Signal</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">magicgui._type_resolution</span><span class="w"> </span><span class="kn">import</span> <span class="n">resolve_single_type</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">magicgui.signature</span><span class="w"> </span><span class="kn">import</span> <span class="n">MagicSignature</span><span class="p">,</span> <span class="n">magic_signature</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">magicgui.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Container</span><span class="p">,</span> <span class="n">MainWindow</span><span class="p">,</span> <span class="n">ProgressBar</span><span class="p">,</span> <span class="n">PushButton</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterator</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">typing_extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ParamSpec</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">magicgui.application</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span><span class="p">,</span> <span class="n">AppRef</span>  <span class="c1"># noqa: F401</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">magicgui.type_map</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypeMap</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">magicgui.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextEdit</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">magicgui.widgets.bases</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseValueWidget</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">magicgui.widgets.protocols</span><span class="w"> </span><span class="kn">import</span> <span class="n">ContainerProtocol</span><span class="p">,</span> <span class="n">MainWindowProtocol</span>
+
+    <span class="n">_P</span> <span class="o">=</span> <span class="n">ParamSpec</span><span class="p">(</span><span class="s2">"_P"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">_P</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"_P"</span><span class="p">)</span>  <span class="c1"># easier runtime dependency than ParamSpec</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_inject_tooltips_from_docstrings</span><span class="p">(</span>
+    <span class="n">docstring</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sig</span><span class="p">:</span> <span class="n">MagicSignature</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Update `sig` gui options with tooltips extracted from `docstring`."""</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">docstring_parser</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">docstring</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="n">doc_params</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">arg_name</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">description</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">parse</span><span class="p">(</span><span class="n">docstring</span><span class="p">)</span><span class="o">.</span><span class="n">params</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">doc_params</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="c1"># deal with the (numpydocs) case when there are multiple parameters separated</span>
+    <span class="c1"># by a comma</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc_params</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="s2">","</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">split_key</span> <span class="ow">in</span> <span class="n">k</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">):</span>
+                <span class="n">doc_params</span><span class="p">[</span><span class="n">split_key</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span> <span class="o">=</span> <span class="n">v</span>
+            <span class="k">del</span> <span class="n">doc_params</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">description</span> <span class="ow">in</span> <span class="n">doc_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="c1"># this is to catch potentially bad arg_name parsing in docstring_parser</span>
+        <span class="c1"># if using napoleon style google docstringss</span>
+        <span class="n">argname</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">desc</span> <span class="o">=</span> <span class="n">description</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"`"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span> <span class="k">if</span> <span class="n">description</span> <span class="k">else</span> <span class="s2">""</span>
+        <span class="c1"># some docstring params may be mislabeled and not appear in the params</span>
+        <span class="k">if</span> <span class="n">argname</span> <span class="ow">in</span> <span class="n">sig</span><span class="o">.</span><span class="n">parameters</span><span class="p">:</span>
+            <span class="c1"># use setdefault so as not to override an explicitly provided tooltip</span>
+            <span class="n">sig</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="n">argname</span><span class="p">]</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">"tooltip"</span><span class="p">,</span> <span class="n">desc</span><span class="p">)</span>
+
+
+<span class="n">_R</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"_R"</span><span class="p">)</span>
+<span class="n">_KT</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"_KT"</span><span class="p">)</span>
+<span class="n">_VT</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"_VT"</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">FunctionGui</span><span class="p">(</span><span class="n">Container</span><span class="p">,</span> <span class="n">Generic</span><span class="p">[</span><span class="n">_P</span><span class="p">,</span> <span class="n">_R</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">"""Wrapper for a container of widgets representing a callable object.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    function : Callable</span>
+<span class="sd">        A callable to turn into a GUI</span>
+<span class="sd">    call_button : bool | str | None, optional</span>
+<span class="sd">        If True, create an additional button that calls the original function when</span>
+<span class="sd">        clicked.  If a `str`, set the button text. by default False when</span>
+<span class="sd">        auto_call is True, and True otherwise.</span>
+<span class="sd">        The button can be accessed from the `.call_button` property.</span>
+<span class="sd">    layout : str, optional</span>
+<span class="sd">        The type of layout to use. Must be `horizontal` or `vertical`</span>
+<span class="sd">        by default "horizontal".</span>
+<span class="sd">    scrollable : bool, optional</span>
+<span class="sd">        Whether to enable scroll bars or not. If enabled, scroll bars will</span>
+<span class="sd">        only appear along the layout direction, not in both directions.</span>
+<span class="sd">    labels : bool, optional</span>
+<span class="sd">        Whether labels are shown in the widget. by default True</span>
+<span class="sd">    tooltips : bool, optional</span>
+<span class="sd">        Whether tooltips are shown when hovering over widgets. by default True</span>
+<span class="sd">    app : Application | str | None, optional</span>
+<span class="sd">        A backend to use, by default `None` (use the default backend.)</span>
+<span class="sd">    visible : bool, optional</span>
+<span class="sd">        Whether to immediately show the widget.  If `False`, widget is explicitly</span>
+<span class="sd">        hidden.  If `None`, widget is not shown, but will be shown if a parent</span>
+<span class="sd">        container is shown, by default None.</span>
+<span class="sd">    auto_call : bool, optional</span>
+<span class="sd">        If True, changing any parameter in either the GUI or the widget attributes</span>
+<span class="sd">        will call the original function with the current settings. by default False</span>
+<span class="sd">    result_widget : bool, optional</span>
+<span class="sd">        Whether to display a LineEdit widget the output of the function when called,</span>
+<span class="sd">        by default False</span>
+<span class="sd">    param_options : dict, optional</span>
+<span class="sd">        A dict of name: widget_options dict for each parameter in the function.</span>
+<span class="sd">        Will be passed to `magic_signature` by default `None`</span>
+<span class="sd">    name : str, optional</span>
+<span class="sd">        A name to assign to the Container widget, by default `function.__name__`</span>
+<span class="sd">    persist : bool, optional</span>
+<span class="sd">        If `True`, when parameter values change in the widget, they will be stored to</span>
+<span class="sd">        disk (in `~/.config/magicgui/cache`) and restored when the widget is loaded</span>
+<span class="sd">        again with `persist = True`.  By default, `False`.</span>
+<span class="sd">    raise_on_unknown : bool</span>
+<span class="sd">        If True, raise an error if a parameter annotation is not recognized.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    TypeError</span>
+<span class="sd">        If unexpected keyword arguments are provided</span>
+<span class="sd">    """</span>
+
+    <span class="n">called</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span>
+        <span class="nb">object</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"Emitted with the result after the function is called."</span>
+    <span class="p">)</span>
+    <span class="n">_widget</span><span class="p">:</span> <span class="n">ContainerProtocol</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="n">_P</span><span class="p">,</span> <span class="n">_R</span><span class="p">],</span>
+        <span class="n">call_button</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">layout</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"vertical"</span><span class="p">,</span>
+        <span class="n">scrollable</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">tooltips</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">app</span><span class="p">:</span> <span class="n">AppRef</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">visible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">auto_call</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">result_widget</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">param_options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">persist</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">raise_on_unknown</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">type_map</span><span class="p">:</span> <span class="n">TypeMap</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">magicgui.type_map</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypeMap</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">callable</span><span class="p">(</span><span class="n">function</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"'function' argument to FunctionGui must be callable."</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">type_map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">type_map</span> <span class="o">=</span> <span class="n">TypeMap</span><span class="o">.</span><span class="n">global_instance</span><span class="p">()</span>
+
+        <span class="c1"># consume extra Widget keywords</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-</span> <span class="p">{</span><span class="s2">"annotation"</span><span class="p">,</span> <span class="s2">"gui_only"</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">extra</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s2">"s"</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="s2">""</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"FunctionGui got unexpected keyword argument</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">extra</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">param_options</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">param_options</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">param_options</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"'param_options' must be a dict of dicts"</span><span class="p">)</span>
+
+        <span class="n">sig</span> <span class="o">=</span> <span class="n">magic_signature</span><span class="p">(</span>
+            <span class="n">function</span><span class="p">,</span> <span class="n">gui_options</span><span class="o">=</span><span class="n">param_options</span><span class="p">,</span> <span class="n">raise_on_unknown</span><span class="o">=</span><span class="n">raise_on_unknown</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_return_annotation</span> <span class="o">=</span> <span class="n">resolve_single_type</span><span class="p">(</span><span class="n">sig</span><span class="o">.</span><span class="n">return_annotation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tooltips</span> <span class="o">=</span> <span class="n">tooltips</span>
+        <span class="k">if</span> <span class="n">tooltips</span><span class="p">:</span>
+            <span class="n">_inject_tooltips_from_docstrings</span><span class="p">(</span><span class="n">function</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">persist</span> <span class="o">=</span> <span class="n">persist</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_function</span> <span class="o">=</span> <span class="n">function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__wrapped__</span> <span class="o">=</span> <span class="n">function</span>
+        <span class="c1"># it's conceivable that function is not actually an instance of FunctionType</span>
+        <span class="c1"># we can still support any generic callable, but we need to be careful not to</span>
+        <span class="c1"># access attributes (like `__name__` that only function objects have).</span>
+        <span class="c1"># Mypy doesn't seem catch this at this point:</span>
+        <span class="c1"># https://github.com/python/mypy/issues/9934</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="s2">"__name__"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="s2">"func"</span><span class="p">):</span>  <span class="c1"># partials:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="s2">"func"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">"__name__"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">function</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">function</span><span class="o">.</span><span class="vm">__module__</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">function</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2">"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_callable_name</span> <span class="o">=</span> <span class="n">name</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">,</span>
+            <span class="n">scrollable</span><span class="o">=</span><span class="n">scrollable</span><span class="p">,</span>
+            <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+            <span class="n">visible</span><span class="o">=</span><span class="n">visible</span><span class="p">,</span>
+            <span class="n">widgets</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">sig</span><span class="o">.</span><span class="n">widgets</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">type_map</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callable_name</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_type_map</span> <span class="o">=</span> <span class="n">type_map</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_param_options</span> <span class="o">=</span> <span class="n">param_options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_result_name</span> <span class="o">=</span> <span class="s2">""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_call_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bound_instances</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">FunctionGui</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># a deque of Progressbars to be created by (possibly nested) tqdm_mgui iterators</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tqdm_pbars</span><span class="p">:</span> <span class="n">deque</span><span class="p">[</span><span class="n">ProgressBar</span><span class="p">]</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+        <span class="c1"># the nesting level of tqdm_mgui iterators in a given __call__</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tqdm_depth</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">call_button</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">call_button</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">auto_call</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_call_button</span><span class="p">:</span> <span class="n">PushButton</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">call_button</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">call_button</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">call_button</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"Run"</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_call_button</span> <span class="o">=</span> <span class="n">PushButton</span><span class="p">(</span><span class="n">gui_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"call_button"</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">auto_call</span><span class="p">:</span>  <span class="c1"># (otherwise it already gets called)</span>
+
+                <span class="nd">@self</span><span class="o">.</span><span class="n">_call_button</span><span class="o">.</span><span class="n">changed</span><span class="o">.</span><span class="n">connect</span>
+                <span class="k">def</span><span class="w"> </span><span class="nf">_disable_button_and_call</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="c1"># disable the call button until the function has finished</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_call_button</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="s2">"PushButton"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_button</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_call_button</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="fm">__call__</span><span class="p">()</span>  <span class="c1"># type: ignore [call-arg]</span>
+                    <span class="k">finally</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_call_button</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_call_button</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_result_widget</span><span class="p">:</span> <span class="n">BaseValueWidget</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">result_widget</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_result_widget</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span>
+                <span class="s2">"BaseValueWidget"</span><span class="p">,</span>
+                <span class="n">type_map</span><span class="o">.</span><span class="n">create_widget</span><span class="p">(</span>
+                    <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">annotation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_return_annotation</span><span class="p">,</span>
+                    <span class="n">gui_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">is_result</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">raise_on_unknown</span><span class="o">=</span><span class="n">raise_on_unknown</span><span class="p">,</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_result_widget</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">persist</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_auto_call</span> <span class="o">=</span> <span class="n">auto_call</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">changed</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_on_change</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_on_change</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">persist</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dump</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_auto_call</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">()</span>  <span class="c1"># type: ignore [call-arg]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">call_button</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PushButton</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return the call button."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_button</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">call_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return the number of times the function has been called."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_count</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset_call_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Reset the call count to 0."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_call_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">return_annotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return annotation for [inspect.Signature][inspect.Signature] conversion.</span>
+
+<span class="sd">        ForwardRefs will be resolve when setting the annotation.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_annotation</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__signature__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MagicSignature</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return a MagicSignature object representing the current state of the gui."""</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__signature__</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">return_annotation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">return_annotation</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">_P</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">_P</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_R</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Call the original function with the current parameter values from the Gui.</span>
+
+<span class="sd">        You may pass a `update_widget=True` keyword argument to update the widget</span>
+<span class="sd">        values to match the current parameter values before calling the function.</span>
+
+<span class="sd">        It is also possible to override the current parameter values from the GUI by</span>
+<span class="sd">        providing args/kwargs to the function call.  Only those provided will override</span>
+<span class="sd">        the ones from the gui.  A `called` signal will also be emitted with the results.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        result : Any</span>
+<span class="sd">            whatever the return value of the original function would have been.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        ```python</span>
+<span class="sd">        gui = FunctionGui(func, show=True)</span>
+
+<span class="sd">        # then change parameters in the gui, or by setting:  gui.param.value = something</span>
+
+<span class="sd">        gui()  # calls the original function with the current parameters</span>
+<span class="sd">        ```</span>
+<span class="sd">        """</span>
+        <span class="n">update_widget</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"update_widget"</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+
+        <span class="n">sig</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__signature__</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">bound</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">"missing a required argument"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+                <span class="k">raise</span>
+
+            <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">"argument: '(.+)'"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="n">missing</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">match</span> <span class="k">else</span> <span class="s2">"&lt;param&gt;"</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2"> in call to '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_callable_name</span><span class="si">}{</span><span class="n">sig</span><span class="si">}</span><span class="s2">'.</span><span class="se">\n</span><span class="s2">"</span>
+                <span class="s2">"To avoid this error, you can bind a value or callback to the "</span>
+                <span class="sa">f</span><span class="s2">"parameter:</span><span class="se">\n\n</span><span class="s2">    </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_callable_name</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">missing</span><span class="si">}</span><span class="s2">.bind(value)"</span>
+                <span class="s2">"</span><span class="se">\n\n</span><span class="s2">Or use the 'bind' option in the magicgui decorator:</span><span class="se">\n\n</span><span class="s2">"</span>
+                <span class="sa">f</span><span class="s2">"    @magicgui(</span><span class="si">{</span><span class="n">missing</span><span class="si">}</span><span class="s2">=</span><span class="se">{{</span><span class="s2">'bind': value</span><span class="se">}}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">"</span>
+                <span class="sa">f</span><span class="s2">"    def </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_callable_name</span><span class="si">}{</span><span class="n">sig</span><span class="si">}</span><span class="s2">: ..."</span>
+            <span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">update_widget</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_auto_call</span><span class="p">,</span> <span class="n">before</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_auto_call</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bound</span><span class="o">.</span><span class="n">arguments</span><span class="p">)</span>
+            <span class="k">finally</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_auto_call</span> <span class="o">=</span> <span class="n">before</span>
+
+        <span class="n">bound</span><span class="o">.</span><span class="n">apply_defaults</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tqdm_depth</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># reset the tqdm stack count</span>
+        <span class="k">with</span> <span class="n">_function_name_pointing_to_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function</span><span class="p">(</span><span class="o">*</span><span class="n">bound</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">bound</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_call_count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result_widget</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result_widget</span><span class="o">.</span><span class="n">changed</span><span class="o">.</span><span class="n">blocked</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_result_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="n">return_type</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">return_annotation</span>
+        <span class="k">if</span> <span class="n">return_type</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type_map</span><span class="o">.</span><span class="n">type2callback</span><span class="p">(</span><span class="n">return_type</span><span class="p">):</span>
+                <span class="n">callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">called</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return string representation of instance."""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"&lt;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_callable_name</span><span class="si">}{</span><span class="bp">self</span><span class="o">.</span><span class="n">__signature__</span><span class="si">}</span><span class="s2">&gt;"</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">result_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return a name that can be used for the result of this magicfunction."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result_name</span> <span class="ow">or</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_callable_name</span><span class="si">}</span><span class="s2"> result"</span>
+
+    <span class="nd">@result_name</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">result_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Set the result name of this FunctionGui widget."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_result_name</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FunctionGui</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return a copy of this FunctionGui."""</span>
+        <span class="k">return</span> <span class="n">FunctionGui</span><span class="p">(</span>
+            <span class="n">function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_function</span><span class="p">,</span>
+            <span class="n">call_button</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_call_button</span><span class="o">.</span><span class="n">text</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_button</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">layout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span>
+            <span class="n">labels</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">,</span>
+            <span class="n">param_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_param_options</span><span class="p">,</span>
+            <span class="n">auto_call</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_auto_call</span><span class="p">,</span>
+            <span class="n">result_widget</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_result_widget</span><span class="p">),</span>
+            <span class="n">app</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">persist</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">persist</span><span class="p">,</span>
+            <span class="n">visible</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">visible</span><span class="p">,</span>
+            <span class="n">tooltips</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_tooltips</span><span class="p">,</span>
+            <span class="n">scrollable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_scrollable</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">type_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_type_map</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">objtype</span><span class="p">:</span> <span class="nb">type</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FunctionGui</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Provide descriptor protocol.</span>
+
+<span class="sd">        This allows the @magicgui decorator to work on a function as well as a method.</span>
+<span class="sd">        If a method on a class is decorated with `@magicgui`, then accessing the</span>
+<span class="sd">        attribute on an instance of that class will return a version of the FunctionGui</span>
+<span class="sd">        in which the first argument of the function is bound to the instance. (Just like</span>
+<span class="sd">        what you'd expect with the @property decorator.)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bound : FunctionGui</span>
+<span class="sd">            A new FunctionGui instance.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        ```python</span>
+<span class="sd">        &gt;&gt;&gt; class MyClass:</span>
+<span class="sd">        ...     @magicgui</span>
+<span class="sd">        ...     def my_method(self, x=1):</span>
+<span class="sd">        ...         print(locals())</span>
+<span class="sd">        ...</span>
+<span class="sd">        &gt;&gt;&gt; c = MyClass()</span>
+<span class="sd">        &gt;&gt;&gt; c.my_method  # the FunctionGui that can be used as a widget</span>
+
+<span class="sd">        # calling it works as usual, with `c` provided as `self`</span>
+<span class="sd">        &gt;&gt;&gt; c.my_method(x=34)</span>
+<span class="sd">        {'self': &lt;__main__.MyClass object at 0x7fb610e455e0&gt;, 'x': 34}</span>
+<span class="sd">        ```</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="n">obj_id</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">obj_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bound_instances</span><span class="p">:</span>
+            <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+            <span class="n">p0</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">method</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="p">))</span>
+            <span class="n">prior</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_param_options</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_param_options</span><span class="p">,</span>
+                <span class="p">{</span>
+                    <span class="n">p0</span><span class="p">:</span> <span class="p">{</span><span class="s2">"bind"</span><span class="p">:</span> <span class="n">obj</span><span class="p">},</span>
+                    <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_param_options</span><span class="p">,</span>
+                <span class="p">},</span>
+            <span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_bound_instances</span><span class="p">[</span><span class="n">obj_id</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">finally</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_param_options</span> <span class="o">=</span> <span class="n">prior</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bound_instances</span><span class="p">[</span><span class="n">obj_id</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Prevent setting a magicgui attribute."""</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">"Can't set magicgui attribute"</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_dump_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">magicgui._util</span><span class="w"> </span><span class="kn">import</span> <span class="n">user_cache_dir</span>
+
+        <span class="n">name</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_function</span><span class="p">,</span> <span class="s2">"__qualname__"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callable_name</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"&lt;"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"&gt;"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">)</span>  <span class="c1"># e.g. &lt;locals&gt;</span>
+        <span class="k">return</span> <span class="n">user_cache_dir</span><span class="p">()</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_function</span><span class="o">.</span><span class="vm">__module__</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_dump</span><span class="p">(</span><span class="n">path</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dump_path</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">path</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dump_path</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MainFunctionGui</span><span class="p">(</span><span class="n">FunctionGui</span><span class="p">[</span><span class="n">_P</span><span class="p">,</span> <span class="n">_R</span><span class="p">],</span> <span class="n">MainWindow</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Container of widgets as a Main Application Window."""</span>
+
+    <span class="n">_widget</span><span class="p">:</span> <span class="n">MainWindowProtocol</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="n">_P</span><span class="p">,</span> <span class="n">_R</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_menu_item</span><span class="p">(</span><span class="s2">"Help"</span><span class="p">,</span> <span class="s2">"Documentation"</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_show_docs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_help_text_edit</span><span class="p">:</span> <span class="n">TextEdit</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_show_docs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_help_text_edit</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">magicgui.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextEdit</span>
+
+            <span class="n">docs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function</span><span class="o">.</span><span class="vm">__doc__</span>
+            <span class="n">html</span> <span class="o">=</span> <span class="n">_docstring_to_html</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span> <span class="k">if</span> <span class="n">docs</span> <span class="k">else</span> <span class="s2">"None"</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_help_text_edit</span> <span class="o">=</span> <span class="n">TextEdit</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">html</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_help_text_edit</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_help_text_edit</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">600</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_help_text_edit</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">400</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_help_text_edit</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_docstring_to_html</span><span class="p">(</span><span class="n">docs</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Convert docstring into rich text html."""</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">docstring_parser</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span>
+
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+
+    <span class="n">ptemp</span> <span class="o">=</span> <span class="s2">"&lt;li&gt;&lt;p&gt;&lt;strong&gt;</span><span class="si">{}</span><span class="s2">&lt;/strong&gt; (&lt;em&gt;</span><span class="si">{}</span><span class="s2">&lt;/em&gt;) - </span><span class="si">{}</span><span class="s2">&lt;/p&gt;&lt;/li&gt;"</span>
+    <span class="n">plist</span> <span class="o">=</span> <span class="p">[</span><span class="n">ptemp</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">arg_name</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">type_name</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">description</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">params</span><span class="p">]</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"&lt;h3&gt;Parameters&lt;/h3&gt;&lt;ul&gt;</span><span class="si">{</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plist</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/ul&gt;"</span>
+    <span class="n">short</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"&lt;p&gt;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">short_description</span><span class="si">}</span><span class="s2">&lt;/p&gt;"</span> <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">short_description</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="n">long</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"&lt;p&gt;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">long_description</span><span class="si">}</span><span class="s2">&lt;/p&gt;"</span> <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">long_description</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">"`?([^`]+)`?"</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"&lt;code&gt;\1&lt;/code&gt;"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">short</span><span class="si">}{</span><span class="n">long</span><span class="si">}{</span><span class="n">params</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_function_name_pointing_to_widget</span><span class="p">(</span><span class="n">function_gui</span><span class="p">:</span> <span class="n">FunctionGui</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Context in which the name of the function points to the function_gui instance.</span>
+
+<span class="sd">    When calling the function provided to FunctionGui, we make sure that the name</span>
+<span class="sd">    of the function points to the FunctionGui object itself.</span>
+<span class="sd">    In standard `@magicgui` usage, this will have been the case anyway.</span>
+<span class="sd">    Doing this here allows the function name in a `@magic_factory`-decorated function</span>
+<span class="sd">    to *also* refer to the function gui instance created by the factory, (rather than</span>
+<span class="sd">    to the [~magicgui._magicgui.MagicFactory][magicgui._magicgui.MagicFactory] object).</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; @magicgui</span>
+<span class="sd">    &gt;&gt;&gt; def func():</span>
+<span class="sd">    ...     # using "func" in the body here will refer to the widget.</span>
+<span class="sd">    ...     print(type(func))</span>
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; func()  # prints 'magicgui.widgets._function_gui.FunctionGui'</span>
+
+<span class="sd">    &gt;&gt;&gt; @magic_factory</span>
+<span class="sd">    &gt;&gt;&gt; def func():</span>
+<span class="sd">    ...     # using "func" in the body here will refer to the *widget* not the factory.</span>
+<span class="sd">    ...     print(type(func))</span>
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; widget = func()</span>
+<span class="sd">    &gt;&gt;&gt; widget()  # *also* prints 'magicgui.widgets._function_gui.FunctionGui'</span>
+<span class="sd">    """</span>
+    <span class="n">function</span> <span class="o">=</span> <span class="n">function_gui</span><span class="o">.</span><span class="n">_function</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">FunctionType</span><span class="p">):</span>
+        <span class="c1"># it's not a function object, so we don't know how to patch it...</span>
+        <span class="k">yield</span>
+        <span class="k">return</span>
+
+    <span class="n">func_name</span> <span class="o">=</span> <span class="n">function</span><span class="o">.</span><span class="vm">__name__</span>
+    <span class="c1"># see https://docs.python.org/3/library/inspect.html for details on code objects</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">function</span><span class="o">.</span><span class="vm">__code__</span>
+
+    <span class="k">if</span> <span class="n">func_name</span> <span class="ow">in</span> <span class="n">code</span><span class="o">.</span><span class="n">co_names</span><span class="p">:</span>
+        <span class="c1"># This indicates that the function name was used inside the body of the</span>
+        <span class="c1"># function, and points to some object in the module's global namespace.</span>
+        <span class="c1"># function.__globals__ here points to the module-level globals in which the</span>
+        <span class="c1"># function was defined.</span>
+        <span class="n">original_value</span> <span class="o">=</span> <span class="n">function</span><span class="o">.</span><span class="vm">__globals__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">func_name</span><span class="p">)</span>
+        <span class="n">function</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="n">func_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">function_gui</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">function</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="n">func_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">original_value</span>
+
+    <span class="k">elif</span> <span class="n">function</span><span class="o">.</span><span class="vm">__closure__</span> <span class="ow">and</span> <span class="n">func_name</span> <span class="ow">in</span> <span class="n">code</span><span class="o">.</span><span class="n">co_freevars</span><span class="p">:</span>
+        <span class="c1"># This indicates that the function name was used inside the body of the</span>
+        <span class="c1"># function, and points to some object defined in a local scope (closure), rather</span>
+        <span class="c1"># than the module's global namespace.</span>
+        <span class="c1"># the position of the function name in code.co_freevars tells us where to look</span>
+        <span class="c1"># for the value in the function.__closure__ tuple.</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">co_freevars</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">func_name</span><span class="p">)</span>
+        <span class="n">original_value</span> <span class="o">=</span> <span class="n">function</span><span class="o">.</span><span class="vm">__closure__</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">cell_contents</span>
+        <span class="n">function</span><span class="o">.</span><span class="vm">__closure__</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">cell_contents</span> <span class="o">=</span> <span class="n">function_gui</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">function</span><span class="o">.</span><span class="vm">__closure__</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">cell_contents</span> <span class="o">=</span> <span class="n">original_value</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">yield</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Sarit Dutta.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

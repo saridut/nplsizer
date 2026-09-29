@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nplsizer.filters &#8212; nplsizer 0.1.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ceb86668" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=a58bc63e"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/nplsizer/filters';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.1" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">nplsizer 0.1.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modules.html">
+    nplsizer
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modules.html">
+    nplsizer
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+        <li class="toctree-l1">
+          <a class="reference internal" href="../../py-modindex.html">Python Module Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">nplsizer.filters</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for nplsizer.filters</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="sd">'''</span>
+<span class="sd">Widgets for filtering grayscale images.</span>
+
+<span class="sd">'''</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">skimage</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ski</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">magicgui</span><span class="w"> </span><span class="kn">import</span> <span class="n">magicgui</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">napari.layers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">napari.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">LayerDataTuple</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.kuwahara</span><span class="w"> </span><span class="kn">import</span> <span class="n">kuwahara</span>
+
+<span class="nd">@magicgui</span><span class="p">(</span>
+    <span class="n">call_button</span><span class="o">=</span><span class="s1">'Run'</span><span class="p">,</span> 
+    <span class="n">kernel_width</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'SpinBox'</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="n">kernel_height</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'SpinBox'</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="n">name</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'Output image layer name'</span><span class="p">}</span>
+    <span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">filter_mean</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="p">,</span> 
+        <span class="n">kernel_width</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+        <span class="n">kernel_height</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">'FilteredMean'</span>   
+       <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayerDataTuple</span> <span class="p">:</span>
+
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Smooths an image using the mean filter.  Wraps ``cv::blur()`` from OpenCV.</span>
+<span class="sd">    See https://docs.opencv.org/4.8.0/d4/d86/group__imgproc__filter.html#ga8c45db9afe636703801b0b2e440fce37</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : napari.layers.Image</span>
+<span class="sd">        Input grayscale image</span>
+<span class="sd">    kernel_width : int</span>
+<span class="sd">        Width of the filter kernel. If zero, `kernel_height` must be &gt; 0 and</span>
+<span class="sd">        `kernel_width` will be set equal to `kernel_height`. Both `kernel_width`</span>
+<span class="sd">        and `kernel_height` cannot be zero.</span>
+<span class="sd">    kernel_height : int</span>
+<span class="sd">        Height of the filter kernel. If zero, `kernel_width` must be &gt; 0 and</span>
+<span class="sd">        `kernel_height` will be set equal to `kernel_width`. Both `kernel_width`</span>
+<span class="sd">        and `kernel_height` cannot be zero. </span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of output napari image layer</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    napari.types.LayerDataTuple</span>
+<span class="sd">        Filtered image with 64-bit float datatype</span>
+
+<span class="sd">    """</span>
+    <span class="k">assert</span> <span class="p">(</span> <span class="p">(</span><span class="n">kernel_width</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">kernel_height</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="n">kernel_width</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">kernel_width</span> <span class="o">=</span> <span class="n">kernel_height</span>
+    <span class="k">if</span> <span class="n">kernel_height</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">kernel_height</span> <span class="o">=</span> <span class="n">kernel_width</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">img_dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">blur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">kernel_width</span><span class="p">,</span> <span class="n">kernel_height</span><span class="p">))</span>
+    <span class="n">img_dst</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_float64</span><span class="p">(</span><span class="n">img_dst</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">img_dst</span><span class="p">,</span> 
+            <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">'metadata'</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span> <span class="s1">'colormap'</span><span class="p">:</span> <span class="s1">'gray'</span><span class="p">,</span>
+             <span class="s1">'interpolation2d'</span><span class="p">:</span> <span class="s1">'spline36'</span><span class="p">},</span> <span class="s1">'image'</span><span class="p">)</span>
+
+
+
+<span class="nd">@magicgui</span><span class="p">(</span>
+    <span class="n">call_button</span><span class="o">=</span><span class="s1">'Run'</span><span class="p">,</span> 
+    <span class="n">ksize</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'SpinBox'</span><span class="p">,</span> <span class="s1">'min'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+    <span class="n">name</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'Output image layer name'</span><span class="p">}</span>
+    <span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">filter_median</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="p">,</span> 
+        <span class="n">ksize</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">'FilteredMedian'</span>   
+       <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayerDataTuple</span> <span class="p">:</span>
+
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Smooths an image using the median filter.  Wraps ``cv::medianBlur()`` from</span>
+<span class="sd">    OpenCV. </span>
+<span class="sd">    See https://docs.opencv.org/4.8.0/d4/d86/group__imgproc__filter.html#ga564869aa33e58769b4469101aac458f9</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : napari.layers.Image</span>
+<span class="sd">        Input grayscale image</span>
+<span class="sd">    ksize : int</span>
+<span class="sd">        Aperture linear size; it must be odd and greater than 1.</span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of output napari image layer</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    napari.types.LayerDataTuple</span>
+<span class="sd">        Filtered image with 64-bit float datatype</span>
+
+<span class="sd">    """</span>
+    <span class="k">assert</span> <span class="n">ksize</span> <span class="o">&gt;</span> <span class="mi">1</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">img_dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">ksize</span><span class="p">)</span>
+    <span class="n">img_dst</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_float64</span><span class="p">(</span><span class="n">img_dst</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">img_dst</span><span class="p">,</span> 
+            <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">'metadata'</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+             <span class="s1">'colormap'</span><span class="p">:</span> <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">'interpolation2d'</span><span class="p">:</span> <span class="s1">'spline36'</span><span class="p">},</span>
+            <span class="s1">'image'</span><span class="p">)</span>
+
+
+
+<span class="nd">@magicgui</span><span class="p">(</span>
+    <span class="n">call_button</span><span class="o">=</span><span class="s1">'Run'</span><span class="p">,</span> 
+    <span class="n">kernel_width</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'SpinBox'</span><span class="p">,</span> <span class="s1">'min'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+    <span class="n">kernel_height</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'SpinBox'</span><span class="p">},</span>
+    <span class="n">name</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'Output image layer name'</span><span class="p">}</span>
+    <span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">filter_gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="p">,</span> 
+        <span class="n">kernel_width</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+        <span class="n">kernel_height</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+        <span class="n">sigma_x</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> 
+        <span class="n">sigma_y</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> 
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">'FilteredGaussian'</span>   
+       <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayerDataTuple</span> <span class="p">:</span>
+
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Smooths an image using a Gaussian filter.  Wraps ``cv::GaussianBlur()`` from OpenCV.</span>
+<span class="sd">    See https://docs.opencv.org/4.8.0/d4/d86/group__imgproc__filter.html#gaabe8c836e97159a9193fb0b11ac52cf1</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : napari.layers.Image</span>
+<span class="sd">        Input grayscale image</span>
+<span class="sd">    kernel_width : int</span>
+<span class="sd">        Width of the filter kernel, must be odd. </span>
+<span class="sd">    kernel_height : int</span>
+<span class="sd">        Height of the filter kernel, must be zero or odd. If zero,</span>
+<span class="sd">        `kernel_width` must be &gt; 0 and `kernel_height` will be set equal to</span>
+<span class="sd">        `kernel_width`.</span>
+<span class="sd">    sigma_x : float</span>
+<span class="sd">        Gaussian kernel standard deviation in X direction. If zero, it is set</span>
+<span class="sd">        equal to `kernel_width`.</span>
+<span class="sd">    sigma_y : float</span>
+<span class="sd">        Gaussian kernel standard deviation in Y direction. If zero, it is set</span>
+<span class="sd">        equal to `kernel_height`.</span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of output napari image layer</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    napari.types.LayerDataTuple</span>
+<span class="sd">        Filtered image with 64-bit float datatype</span>
+
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">kernel_height</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">kernel_height</span> <span class="o">=</span> <span class="n">kernel_width</span>
+    <span class="k">assert</span> <span class="p">(</span> <span class="n">kernel_height</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">sigma_x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">sigma_x</span> <span class="o">=</span> <span class="n">kernel_width</span>
+    <span class="k">if</span> <span class="n">sigma_y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">sigma_y</span> <span class="o">=</span> <span class="n">kernel_height</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">img_dst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">img_dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">kernel_width</span><span class="p">,</span> <span class="n">kernel_height</span><span class="p">),</span> <span class="n">sigma_x</span><span class="p">,</span>
+                               <span class="n">img_dst</span><span class="p">,</span> <span class="n">sigma_y</span><span class="p">)</span>
+    <span class="n">img_dst</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_float64</span><span class="p">(</span><span class="n">img_dst</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">img_dst</span><span class="p">,</span> 
+            <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">'metadata'</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+             <span class="s1">'colormap'</span><span class="p">:</span> <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">'interpolation2d'</span><span class="p">:</span> <span class="s1">'spline36'</span><span class="p">},</span>
+             <span class="s1">'image'</span><span class="p">)</span>
+
+
+
+<span class="nd">@magicgui</span><span class="p">(</span>
+    <span class="n">call_button</span><span class="o">=</span><span class="s1">'Run'</span><span class="p">,</span> 
+    <span class="n">weight</span><span class="o">=</span><span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'FloatSpinBox'</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">},</span>
+    <span class="n">eps</span><span class="o">=</span><span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'FloatSpinBox'</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mf">1e-5</span><span class="p">},</span>
+    <span class="n">name</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'Output image layer name'</span><span class="p">}</span>
+    <span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">denoise_tv_bregman</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="p">,</span> 
+        <span class="n">weight</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+        <span class="n">max_num_iter</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+        <span class="n">eps</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">'DenoisedBregman'</span>   
+       <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayerDataTuple</span> <span class="p">:</span>
+
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Performs total variation denoising using split-Bregman optimization.</span>
+<span class="sd">    Wraps ``denoise_tv_bregman()`` from scikit-image. </span>
+<span class="sd">    See https://scikit-image.org/docs/stable/api/skimage.restoration.html#skimage.restoration.denoise_tv_bregman</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : napari.layers.Image</span>
+<span class="sd">        Input grayscale image</span>
+<span class="sd">    weight : float</span>
+<span class="sd">        Denoising weight. The smaller the weight, the more denoising (at the</span>
+<span class="sd">        expense of less similarity to image).</span>
+<span class="sd">    max_num_iter : int</span>
+<span class="sd">        Maximum number of iterations used for the optimization.</span>
+<span class="sd">    eps : float</span>
+<span class="sd">        Tolerance for stopping iterations, must be &gt; 0.</span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of output napari image layer</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    napari.types.LayerDataTuple</span>
+<span class="sd">        Denoised image with 64-bit float datatype</span>
+
+<span class="sd">    """</span>
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">restoration</span><span class="o">.</span><span class="n">denoise_tv_bregman</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span>
+                <span class="n">max_num_iter</span><span class="o">=</span><span class="n">max_num_iter</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">)</span>
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_float64</span><span class="p">(</span><span class="n">img_dn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">img_dn</span><span class="p">,</span> 
+            <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">'metadata'</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+             <span class="s1">'colormap'</span><span class="p">:</span> <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">'interpolation2d'</span><span class="p">:</span> <span class="s1">'spline36'</span><span class="p">},</span>
+             <span class="s1">'image'</span><span class="p">)</span>
+
+
+
+<span class="nd">@magicgui</span><span class="p">(</span>
+    <span class="n">call_button</span><span class="o">=</span><span class="s1">'Run'</span><span class="p">,</span> 
+    <span class="n">lamda</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'lambda'</span><span class="p">},</span>
+    <span class="n">name</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'Output image layer name'</span><span class="p">}</span>
+    <span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">denoise_tvl1</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="p">,</span> 
+        <span class="n">lamda</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+        <span class="n">niters</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">'DenoisedTVL1'</span>   
+       <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayerDataTuple</span> <span class="p">:</span>
+
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Performs denoising using a total variation based Primal-dual algorithm.</span>
+<span class="sd">    Wraps ``cv::denoise_TVL1()`` from OpenCV. </span>
+<span class="sd">    See https://docs.opencv.org/4.8.0/d1/d79/group__photo__denoise.html#ga7602ed5ae17b7de40152b922227c4e4f</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : napari.layers.Image</span>
+<span class="sd">        Input grayscale image</span>
+<span class="sd">    lamda : float</span>
+<span class="sd">        Denoising weight. As it is enlarged, the smooth (blurred) images are</span>
+<span class="sd">        treated more favorably than detailed (but maybe more noised) ones.</span>
+<span class="sd">        Roughly speaking, as it becomes smaller, the result will be more blur</span>
+<span class="sd">        but more severe outliers will be removed. </span>
+<span class="sd">    niters : int</span>
+<span class="sd">        Number of iterations that the algorithm will run. Of course, as more</span>
+<span class="sd">        iterations as better, but it is hard to quantitatively refine this</span>
+<span class="sd">        statement, so just use the default and increase it if the results are</span>
+<span class="sd">        poor.</span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of output napari image layer</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    napari.types.LayerDataTuple</span>
+<span class="sd">        Denoised image with 64-bit float datatype</span>
+
+<span class="sd">    """</span>
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">denoise_TVL1</span><span class="p">([</span><span class="n">img</span><span class="p">],</span> <span class="n">img_dn</span><span class="p">,</span> <span class="n">lamda</span><span class="p">,</span> <span class="n">niters</span><span class="p">)</span> 
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_float64</span><span class="p">(</span><span class="n">img_dn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">img_dn</span><span class="p">,</span> 
+            <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">'metadata'</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+             <span class="s1">'colormap'</span><span class="p">:</span> <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">'interpolation2d'</span><span class="p">:</span> <span class="s1">'spline36'</span><span class="p">},</span>
+             <span class="s1">'image'</span><span class="p">)</span>
+
+
+
+<span class="nd">@magicgui</span><span class="p">(</span>
+    <span class="n">call_button</span><span class="o">=</span><span class="s1">'Run'</span><span class="p">,</span> 
+    <span class="n">template_window_size</span><span class="o">=</span><span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'SpinBox'</span><span class="p">,</span> <span class="s1">'min'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+    <span class="n">search_window_size</span><span class="o">=</span><span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'SpinBox'</span><span class="p">,</span> <span class="s1">'min'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span> <span class="p">,</span> 
+    <span class="n">name</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'Output image layer name'</span><span class="p">}</span>
+    <span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">denoise_nl_means</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="p">,</span> 
+        <span class="n">h</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
+        <span class="n">template_window_size</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> 
+        <span class="n">search_window_size</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span> 
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">'DenoisedNlMeans'</span>   
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayerDataTuple</span> <span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Performs denoising using Non-local Means Denoising algorithm</span>
+<span class="sd">    (http://www.ipol.im/pub/algo/bcm_non_local_means_denoising/) with several</span>
+<span class="sd">    computational optimizations. Noise expected to be a gaussian white noise.</span>
+<span class="sd">    Wraps ``cv::fastNlMeansDenoising()`` from OpenCV. </span>
+
+<span class="sd">    See https://docs.opencv.org/4.8.0/d1/d79/group__photo__denoise.html#ga4c6b0031f56ea3f98f768881279ffe93</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : napari.layers.Image</span>
+<span class="sd">        Input grayscale image</span>
+<span class="sd">    h : float</span>
+<span class="sd">        Parameter regulating filter strength. Big `h` value perfectly removes</span>
+<span class="sd">        noise but also removes image details, smaller `h` value preserves details</span>
+<span class="sd">        but also preserves some noise.</span>
+<span class="sd">    template_window_size : int</span>
+<span class="sd">        Size in pixels of the template patch that is used to compute weights. Should be odd.</span>
+<span class="sd">    search_window_size : int</span>
+<span class="sd">        Size in pixels of the window that is used to compute weighted average</span>
+<span class="sd">        for given pixel. Should be odd. Affects performance linearly: greater</span>
+<span class="sd">        `search_window_size` will require greater denoising time.</span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of output napari image layer</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    napari.types.LayerDataTuple</span>
+<span class="sd">        Denoised image with 64-bit float datatype</span>
+
+<span class="sd">    """</span>
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">fastNlMeansDenoising</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">img_dn</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">template_window_size</span><span class="p">,</span> 
+                                      <span class="n">search_window_size</span><span class="p">)</span>
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_float64</span><span class="p">(</span><span class="n">img_dn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">img_dn</span><span class="p">,</span> 
+            <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">'metadata'</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+             <span class="s1">'colormap'</span><span class="p">:</span> <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">'interpolation2d'</span><span class="p">:</span> <span class="s1">'spline36'</span><span class="p">},</span>
+             <span class="s1">'image'</span><span class="p">)</span>
+
+
+
+<span class="nd">@magicgui</span><span class="p">(</span>
+    <span class="n">call_button</span><span class="o">=</span><span class="s1">'Run'</span><span class="p">,</span> 
+    <span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'Slider'</span><span class="p">,</span> <span class="s1">'min'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'max'</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="n">sigma_color</span><span class="o">=</span><span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'FloatSlider'</span><span class="p">,</span> <span class="s1">'min'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'max'</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="n">sigma_space</span><span class="o">=</span><span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'FloatSlider'</span><span class="p">,</span> <span class="s1">'min'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'max'</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'step'</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="n">name</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'Output image layer name'</span><span class="p">}</span>
+    <span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">denoise_bilateral</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="p">,</span> 
+        <span class="n">d</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+        <span class="n">sigma_color</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">25.0</span><span class="p">,</span> 
+        <span class="n">sigma_space</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">25.0</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">'DenoisedBilateral'</span>   
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayerDataTuple</span> <span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Applies the bilateral filter to an image.  It is very slow compared to most</span>
+<span class="sd">    filters. Wraps ``cv::bilateralFilter()`` from OpenCV.</span>
+
+<span class="sd">    See https://docs.opencv.org/4.8.0/d4/d86/group__imgproc__filter.html#ga13a01048a8a200aab032ce86a9e7c7be</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : napari.layers.Image</span>
+<span class="sd">        Input grayscale image</span>
+<span class="sd">    d : int</span>
+<span class="sd">        Diameter of each pixel neighborhood that is used during filtering. If </span>
+<span class="sd">        `d &lt;= 0`, it is computed from `sigma_space`. Large filters can be very</span>
+<span class="sd">        slow.</span>
+<span class="sd">    sigma_color : float</span>
+<span class="sd">        Filter sigma in the color space. A larger value of the parameter means</span>
+<span class="sd">        that farther colors within the pixel neighborhood (see `sigma_space`) will</span>
+<span class="sd">        be mixed together, resulting in larger areas of semi-equal color. The 2</span>
+<span class="sd">        `sigma` values can be set same. If they are small (&lt; 10), the filter will</span>
+<span class="sd">        not have much effect, whereas if they are large (&gt; 150), they will have</span>
+<span class="sd">        a very strong effect, making the image look "cartoonish".</span>
+<span class="sd">    sigma_space : float</span>
+<span class="sd">        Filter sigma in the coordinate space. A larger value of the parameter</span>
+<span class="sd">        means that farther pixels will influence each other as long as their</span>
+<span class="sd">        colors are close enough (see `sigma_color`). When `d&gt;0`, it specifies the</span>
+<span class="sd">        neighborhood size regardless of `sigma_space`. Otherwise, `d` is proportional</span>
+<span class="sd">        to `sigma_space`.</span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of output napari image layer</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    napari.types.LayerDataTuple</span>
+<span class="sd">        Denoised image with 64-bit float datatype</span>
+
+<span class="sd">    """</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bilateralFilter</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">sigma_color</span><span class="p">,</span> <span class="n">sigma_space</span><span class="p">)</span>
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_float64</span><span class="p">(</span><span class="n">img_dn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">img_dn</span><span class="p">,</span> 
+            <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">'metadata'</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+             <span class="s1">'colormap'</span><span class="p">:</span> <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">'interpolation2d'</span><span class="p">:</span> <span class="s1">'spline36'</span><span class="p">},</span>
+             <span class="s1">'image'</span><span class="p">)</span>
+
+
+
+<span class="nd">@magicgui</span><span class="p">(</span>
+    <span class="n">call_button</span><span class="o">=</span><span class="s1">'Run'</span><span class="p">,</span> 
+    <span class="n">method</span><span class="o">=</span><span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'ComboBox'</span><span class="p">,</span> <span class="s1">'choices'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'mean'</span><span class="p">,</span> <span class="s1">'gaussian'</span><span class="p">]},</span>
+    <span class="n">name</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'Output image layer name'</span><span class="p">}</span>
+    <span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">denoise_kuwahara</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="p">,</span> 
+        <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">'mean'</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">sigma</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">'DenoisedKuwahara'</span>   
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayerDataTuple</span> <span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Performs denoising using Kuwahara algorithm.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : napari.layers.Image</span>
+<span class="sd">        Input grayscale image</span>
+<span class="sd">    method : str</span>
+<span class="sd">        Method used to compute the pixel values. {'mean' | 'gaussian'}</span>
+<span class="sd">    radius : float</span>
+<span class="sd">        Window radius (`winsize = 2 * radius + 1`)</span>
+<span class="sd">    sigma : float</span>
+<span class="sd">        Used if metod is "gaussian", automatically computed when `None` </span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of output napari image layer</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    napari.types.LayerDataTuple</span>
+<span class="sd">        Denoised image with 64-bit float datatype</span>
+
+<span class="sd">    """</span>
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">kuwahara</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span> 
+    <span class="n">img_dn</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_float64</span><span class="p">(</span><span class="n">img_dn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">img_dn</span><span class="p">,</span> 
+            <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">'metadata'</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+             <span class="s1">'colormap'</span><span class="p">:</span> <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">'interpolation2d'</span><span class="p">:</span> <span class="s1">'spline36'</span><span class="p">},</span>
+            <span class="s1">'image'</span><span class="p">)</span>
+
+
+
+<span class="nd">@magicgui</span><span class="p">(</span>
+    <span class="n">call_button</span><span class="o">=</span><span class="s1">'Run'</span><span class="p">,</span> 
+    <span class="n">amount</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'widget_type'</span><span class="p">:</span> <span class="s1">'FloatSpinBox'</span><span class="p">,</span> <span class="s1">'min'</span><span class="p">:</span> <span class="o">-</span><span class="mf">100.0</span><span class="p">},</span>
+    <span class="n">name</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'Output image layer name'</span><span class="p">}</span>
+    <span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">filter_unsharp_mask</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="p">,</span> 
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+        <span class="n">amount</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">'FilteredUnsharp'</span>   
+       <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayerDataTuple</span> <span class="p">:</span>
+
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Sharpens an image using the unsharp_mask filter.  Wraps ``unsharp_mask()`` from scikit-image.</span>
+<span class="sd">    See https://scikit-image.org/docs/stable/api/skimage.filters.html#skimage.filters.unsharp_mask</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : napari.layers.Image</span>
+<span class="sd">        Input grayscale image</span>
+<span class="sd">    radius : float</span>
+<span class="sd">        Blurring radius. Note that 0 radius means no blurring.</span>
+<span class="sd">    amount : float</span>
+<span class="sd">        The details will be amplified with this factor. The factor could be 0 or</span>
+<span class="sd">        negative. Typically, it is a small positive number, e.g. 1.0.</span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of output napari image layer</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    napari.types.LayerDataTuple</span>
+<span class="sd">        Filtered image with 64-bit float datatype</span>
+
+<span class="sd">    """</span>
+    <span class="n">img_dst</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">unsharp_mask</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="n">amount</span><span class="p">)</span>
+    <span class="n">img_dst</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">img_as_float64</span><span class="p">(</span><span class="n">img_dst</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">img_dst</span><span class="p">,</span> 
+            <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">'metadata'</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+             <span class="s1">'colormap'</span><span class="p">:</span> <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">'interpolation2d'</span><span class="p">:</span> <span class="s1">'spline36'</span><span class="p">},</span>
+            <span class="s1">'image'</span><span class="p">)</span>
+
+
+
+<span class="n">filter_widgets</span> <span class="o">=</span> <span class="p">[(</span><span class="n">filter_mean</span><span class="p">,</span> <span class="s1">'Mean'</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">filter_median</span><span class="p">,</span> <span class="s1">'Median'</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">filter_gaussian</span><span class="p">,</span> <span class="s1">'Gaussian'</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">filter_unsharp_mask</span><span class="p">,</span> <span class="s1">'Sharpen'</span><span class="p">)</span>
+                 <span class="p">]</span>
+
+<span class="n">denoiser_widgets</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="p">(</span><span class="n">denoise_tv_bregman</span><span class="p">,</span> <span class="s1">'TV Bregman'</span><span class="p">),</span>
+                    <span class="p">(</span><span class="n">denoise_tvl1</span><span class="p">,</span> <span class="s1">'TVL1'</span><span class="p">),</span>
+                    <span class="p">(</span><span class="n">denoise_nl_means</span><span class="p">,</span> <span class="s1">'Nonlocal Means'</span><span class="p">),</span>
+                    <span class="p">(</span><span class="n">denoise_bilateral</span><span class="p">,</span> <span class="s1">'Bilateral'</span><span class="p">),</span>
+                    <span class="p">(</span><span class="n">denoise_kuwahara</span><span class="p">,</span> <span class="s1">'Kuwahara'</span><span class="p">)</span>
+                   <span class="p">]</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Sarit Dutta.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

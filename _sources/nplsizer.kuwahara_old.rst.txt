@@ -1,0 +1,7 @@
+nplsizer.kuwahara\_old module
+=============================
+
+.. automodule:: nplsizer.kuwahara_old
+   :members:
+   :show-inheritance:
+   :undoc-members:

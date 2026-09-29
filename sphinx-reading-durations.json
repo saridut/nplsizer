@@ -1,0 +1,12 @@
+{
+    "index": 0.005,
+    "modules": 0.001,
+    "nplsizer": 0.004,
+    "nplsizer.cli": 0.008,
+    "nplsizer.filters": 0.086,
+    "nplsizer.histogram": 0.026,
+    "nplsizer.io_ops": 0.024,
+    "nplsizer.morph_ops": 0.027,
+    "nplsizer.segmentation": 0.023,
+    "nplsizer.thresholders": 0.018
+}
